@@ -8,16 +8,15 @@
 #define min_pid 100
 #define max_pid 1000
 #define no_of_pid 900
-
 int a=0;
-int bitmap[no_of_pid];
+int bitmap[no_of_pid];                    // an array used to display the availability of process id's.          
 
-int allocate_map();
-int allocate_pid(int exe_time);
-int release_pid(int);
-int total_available();
-int next_available();
-void *create_mul_process(void *exe_time);
+int allocate_map();			// maps all the pid's within range and initially made all the pids are in available states. 
+int allocate_pid(int exe_time);		// allocates different id for different processes respectively;
+int release_pid(int);			// releases pid's  whenever a process is terminated
+int total_available();			// returns the  count of current available pid's
+int next_available();			// returns the next available pid i.e not in use.
+void *create_mul_process(void *exe_time); 	//it creates the multiple proccess with their execution time
 void optionA();
 void optionB();
 
